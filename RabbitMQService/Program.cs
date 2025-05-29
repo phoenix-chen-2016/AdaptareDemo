@@ -34,7 +34,11 @@ var builder = WebApplication.CreateBuilder(args);
 				ConnectionPromise = sp.GetRequiredService<TaskResource<IConnection>>(),
 				SetupQueueAndExchange = async (channel, ct) =>
 				{
-					await channel.QueueDeclareAsync("demo", durable: true, autoDelete: false, cancellationToken: ct).ConfigureAwait(false);
+					await channel.QueueDeclareAsync(
+						"demo",
+						exclusive: false,
+						autoDelete: false,
+						cancellationToken: ct).ConfigureAwait(false);
 
 					await channel.QueueBindAsync(
 						"demo",

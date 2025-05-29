@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="AdaptareDemo.AppHost/AdaptareDemo.AppHost.csproj" />
+  <Project Path="AdaptareDemo.ServiceDefaults/AdaptareDemo.ServiceDefaults.csproj" />
+  <Project Path="NatsClient/NatsClient.csproj" />
+  <Project Path="NatsService/NatsService.csproj" />
+  <Project Path="RabbitMQClient/RabbitMQClient.csproj" />
+  <Project Path="RabbitMQService/RabbitMQService.csproj" />
+</Solution>
