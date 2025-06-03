@@ -62,6 +62,23 @@ public static class MessageApis
 				.WithSummary("Process message with the nats.process exchange")
 				.WithName("ProcessMessage")
 				.Produces<string>((int)HttpStatusCode.OK);
+
+			group.MapPut(
+				":jet-publish",
+				async (
+					[FromServices] IMessageSender messageSender,
+					[FromBody] string message,
+					CancellationToken cancellationToken) =>
+				{
+					await messageSender.PublishAsync(
+						"nats.jet",
+						message,
+						cancellationToken).ConfigureAwait(false);
+					return Results.Accepted();
+				})
+				.WithSummary("Publish message to the nats.jet exchange")
+				.WithName("JetPublishMessage")
+				.Produces((int)HttpStatusCode.Accepted);
 		}
 
 		return group;

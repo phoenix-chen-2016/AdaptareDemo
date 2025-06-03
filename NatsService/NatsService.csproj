@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Adaptare.Nats" Version="2.0.0" />
+    <PackageReference Include="Adaptare.Nats" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AdaptareDemo.ServiceDefaults\AdaptareDemo.ServiceDefaults.csproj" />
+    <ProjectReference Include="D:\Users\Phoenix\Developer\source\Adaptare\Adaptare.Nats\Adaptare.Nats.csproj" />
   </ItemGroup>
 
 </Project>

@@ -55,6 +55,8 @@ public static class Extensions
 				.AddRuntimeInstrumentation())
 			.WithTracing(tracing => tracing
 				.AddSource("Adaptare.*")
+				.AddSource("NATS.*")
+				.AddSource("NatsService.*")
 				.AddSource(builder.Environment.ApplicationName)
 				.AddAspNetCoreInstrumentation()
 				// 取消註解以下行以啟用 gRPC 監控（需安裝 OpenTelemetry.Instrumentation.GrpcNetClient 套件）
